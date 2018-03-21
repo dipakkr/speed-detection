@@ -14,11 +14,11 @@ router.get('/test',(req,res,next) => {
 router.post('/:car_number',(req,res,next) => {
 
     //DB CONNECTION
-        MongoClient.connect('mongodb://127.0.0.1:27017/SpeedAnalyser',(err,client) =>{
+        MongoClient.connect('mongodb://dipakkr:123456789@ds012538.mlab.com:12538/speedx',(err,client) =>{
 
         if(err) console.log('Unable to connect to database');
 
-        const db = client.db('SpeedAnalyser');
+        const db = client.db('speedx');
 
         //Update speed_limit using the google road api, also update the overspeed
 

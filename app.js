@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 
 //DB connection
-MongoClient.connect('mongodb://127.0.0.1:27017/SpeedAnalyser',(err,client) =>{
+MongoClient.connect('mongodb://dipakkr:123456789@ds012538.mlab.com:12538/speedx',(err,client) =>{
     if(err){
         console.log('Unable to connect to database');
     }
@@ -28,7 +28,6 @@ app.use(function(req, res, next) { //allow cross origin requests
     res.header("Access-Control-Allow-Credentials", true);
     next();
 });
-
 
 app.get('/test',(req,res) =>{
     res.send("API WORKING");

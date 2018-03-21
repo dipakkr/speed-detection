@@ -10,13 +10,14 @@ router.get('/test',(req,res,next) => {
 
 router.get('/:car_number',(req,res,next) => {
    
-    MongoClient.connect('mongodb://127.0.0.1:27017/SpeedAnalyser',(err,client) => {
+    MongoClient.connect('mongodb://dipakkr:123456789@ds012538.mlab.com:12538/speedx',(err,client) => {
         if(err){
             return res.json({"message" : "DB Connection error"});
         }
-        const db = client.db('SpeedAnalyser');
+        const db = client.db('speedx');
 
         db.collection(req.params.car_number).find({}).toArray((err,result) => {
+            
             if(result == null){
                 res.json({
                     "code" : 404,
@@ -25,6 +26,7 @@ router.get('/:car_number',(req,res,next) => {
             }else{
                 res.json({"code" : 200, result});
             }
+
         });
     });
 });
