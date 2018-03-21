@@ -35,6 +35,7 @@ app.get('/test',(req,res) =>{
 });
 
 app.use('/push_speed',require('./routes/Overspeed.js'));
+app.use('/track_vehicle',require('./routes/TrackVehicle.js'));
 
 app.listen(port);
 console.log('Server started at port : '+port);
